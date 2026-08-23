@@ -11,7 +11,7 @@ footer { max-width:1320px; margin:auto; padding:24px 9vw; background:var(--paper
 @media (max-width:720px) { .menu-bar { padding:0 18px; gap:0; } .menu-status { display:none; } main { overflow:hidden; } .hero { padding:72px 24px 70px; display:block; min-height:0; } .hero h1 { font-size:18vw; } .intro { font-size:19px; } .hero-art { width:220px; margin:65px auto 5px; } .window-section,.about-section,.contact-section { padding:75px 24px; } .window-heading { display:block; } .window-heading h2 { margin:18px 0 20px; } .section-note { max-width:280px; } .project-grid { display:block; } .project-card { border-right:0; border-bottom:1px solid var(--ink); padding:22px 18px 28px; } .project-card:last-child { border-bottom:0; } .pixel-image { aspect-ratio:1; } .about-section,.contact-section { display:block; } .about-copy { margin-bottom:55px; } .facts-window { margin:0 4px; } .contact-intro { margin-bottom:60px; } .contact-details { margin-top:35px; } .contact-card-body { padding:26px 20px; } footer { padding:21px 24px; display:grid; gap:10px; } }
 
 @media (min-width:1200px) {
-	main, footer { max-width:1700px; }
+	main, footer { max-width:none; }
 	.hero, .window-section, .about-section, .contact-section { padding-left:4vw; padding-right:4vw; }
 	footer { padding-left:4vw; padding-right:4vw; }
 }
