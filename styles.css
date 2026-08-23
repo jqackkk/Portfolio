@@ -10,6 +10,12 @@ main { max-width:1320px; margin:auto; } .hero { min-height:630px; padding:100px 
 footer { max-width:1320px; margin:auto; padding:24px 9vw; background:var(--paper); border-top:var(--line); display:flex; justify-content:space-between; font:10px var(--mono); } footer a { text-underline-offset:4px; }
 @media (max-width:720px) { .menu-bar { padding:0 18px; gap:0; } .menu-status { display:none; } main { overflow:hidden; } .hero { padding:72px 24px 70px; display:block; min-height:0; } .hero h1 { font-size:18vw; } .intro { font-size:19px; } .hero-art { width:220px; margin:65px auto 5px; } .window-section,.about-section,.contact-section { padding:75px 24px; } .window-heading { display:block; } .window-heading h2 { margin:18px 0 20px; } .section-note { max-width:280px; } .project-grid { display:block; } .project-card { border-right:0; border-bottom:1px solid var(--ink); padding:22px 18px 28px; } .project-card:last-child { border-bottom:0; } .pixel-image { aspect-ratio:1; } .about-section,.contact-section { display:block; } .about-copy { margin-bottom:55px; } .facts-window { margin:0 4px; } .contact-intro { margin-bottom:60px; } .contact-details { margin-top:35px; } .contact-card-body { padding:26px 20px; } footer { padding:21px 24px; display:grid; gap:10px; } }
 
+@media (min-width:1200px) {
+	main, footer { max-width:1700px; }
+	.hero, .window-section, .about-section, .contact-section { padding-left:4vw; padding-right:4vw; }
+	footer { padding-left:4vw; padding-right:4vw; }
+}
+
 .apple-mark { height:30px; align-self:center; transform:none; }
 .button { position:relative; isolation:isolate; min-width:198px; height:65px; padding:0 28px; color:var(--ink); background:var(--ink); border:0; border-radius:0; clip-path:polygon(7% 0,93% 0,93% 3%,96% 3%,96% 8%,98% 8%,98% 20%,100% 20%,100% 80%,98% 80%,98% 92%,96% 92%,96% 97%,93% 97%,93% 100%,7% 100%,7% 97%,4% 97%,4% 92%,2% 92%,2% 80%,0 80%,0 20%,2% 20%,2% 8%,4% 8%,4% 3%,7% 3%); box-shadow:none; }
 .button { clip-path:none; background-color:transparent; background-image:url('media/Union-2.svg'),url('media/Union-1.svg'),url('media/Union.svg'); background-position:center,center,center; background-repeat:no-repeat; background-size:176px 42px,198px 65px,198px 65px; }
