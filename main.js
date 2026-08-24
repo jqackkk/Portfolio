@@ -1,4 +1,4 @@
-const navigationLinks = [...document.querySelectorAll('.menu-link')];
+const navigationLinks = [...document.querySelectorAll('.menu-link[data-section]')];
 const sections = [...document.querySelectorAll('main section[id]')];
 let navigationLockUntil = 0;
 let pendingNavigation = null;
@@ -6,7 +6,7 @@ let navigationTimer = null;
 
 const setActiveLink = (sectionId) => {
 	navigationLinks.forEach((link) => {
-		link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
+		link.classList.toggle('active', link.dataset.section === sectionId);
 	});
 };
 
@@ -47,3 +47,36 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach((section) => sectionObserver.observe(section));
 
+const systemMenuBtn = document.getElementById('system-menu-btn');
+const systemMenu = document.getElementById('system-menu');
+
+if (systemMenuBtn && systemMenu) {
+	systemMenuBtn.addEventListener('click', (e) => {
+		e.stopPropagation();
+		const isExpanded = systemMenuBtn.getAttribute('aria-expanded') === 'true';
+		systemMenuBtn.setAttribute('aria-expanded', !isExpanded);
+		systemMenu.classList.toggle('show');
+	});
+
+	document.addEventListener('click', (e) => {
+		if (systemMenu.classList.contains('show') && !systemMenu.contains(e.target)) {
+			systemMenu.classList.remove('show');
+			systemMenuBtn.setAttribute('aria-expanded', 'false');
+		}
+	});
+}
+
+document.querySelectorAll('.contributors-widget').forEach(widget => {
+	const dock = widget.querySelector('.contributors-dock');
+	const leftBtn = widget.querySelector('.scroll-btn.left');
+	const rightBtn = widget.querySelector('.scroll-btn.right');
+	
+	if (dock && leftBtn && rightBtn) {
+		leftBtn.addEventListener('click', () => {
+			dock.scrollBy({ left: -395, behavior: 'auto' });
+		});
+		rightBtn.addEventListener('click', () => {
+			dock.scrollBy({ left: 395, behavior: 'auto' });
+		});
+	}
+});
